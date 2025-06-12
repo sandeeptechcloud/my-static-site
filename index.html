@@ -2,17 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Static Site</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computer Repair Request – Sandeep Tech Services</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 650px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Rank Computers PVT LTD</h1>
-    <p>This is a simple static website hosted using Render.com</p>
-    <button onclick="showMessage()">Click Me</button>
-    <p id="message"></p>
+    <h2>Book a Computer Repair Appointment</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <!-- Replace form URL above with your Formspree endpoint -->
+      <input type="hidden" name="_subject" value="New Repair Request - Sandeep Tech" />
+      <input type="hidden" name="_cc" value="support@sbtechsolution.com" />
+
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="text" name="phone" id="phone" required />
+
+      <label for="computerType">Computer Type</label>
+      <select name="computerType" id="computerType" required>
+        <option value="">Select</option>
+        <option>Desktop</option>
+        <option>Laptop</option>
+        <option>All-in-One PC</option>
+        <option>MacBook / iMac</option>
+      </select>
+
+      <label for="os">Operating System</label>
+      <select name="os" id="os" required>
+        <option value="">Select</option>
+        <option>Windows 11</option>
+        <option>Windows 10</option>
+        <option>Windows 7</option>
+        <option>Linux (Ubuntu / Kali / Mint)</option>
+        <option>MacOS</option>
+        <option>Other</option>
+      </select>
+
+      <label for="processor">Processor Type</label>
+      <select name="processor" id="processor">
+        <option value="">Select</option>
+        <option>Intel Core i3</option>
+        <option>Intel Core i5</option>
+        <option>Intel Core i7</option>
+        <option>Intel Core i9</option>
+        <option>AMD Ryzen 3</option>
+        <option>AMD Ryzen 5</option>
+        <option>AMD Ryzen 7</option>
+        <option>Other</option>
+      </select>
+
+      <label for="ram">RAM Type</label>
+      <select name="ram" id="ram">
+        <option value="">Select</option>
+        <option>DDR3</option>
+        <option>DDR4</option>
+        <option>DDR5</option>
+        <option>Unknown</option>
+      </select>
+
+      <label for="storage">Storage Type</label>
+      <select name="storage" id="storage">
+        <option value="">Select</option>
+        <option>HDD</option>
+        <option>SSD</option>
+        <option>NVMe</option>
+        <option>HDD + SSD Combo</option>
+        <option>Unknown</option>
+      </select>
+
+      <label for="graphics">Graphics</label>
+      <select name="graphics" id="graphics">
+        <option value="">Select</option>
+        <option>Integrated Graphics</option>
+        <option>NVIDIA Dedicated GPU</option>
+        <option>AMD Radeon GPU</option>
+        <option>Not Sure</option>
+      </select>
+
+      <label for="issueCategory">Issue Type</label>
+      <select name="issueCategory" id="issueCategory" required>
+        <option value="">Select</option>
+        <option>Windows Installation / Upgrade</option>
+        <option>System Slow / Performance Issues</option>
+        <option>Virus or Malware Problem</option>
+        <option>Internet / WiFi Issues</option>
+        <option>Data Backup / Recovery</option>
+        <option>Hardware Issue (Screen, Battery, RAM, HDD)</option>
+        <option>Software Installation</option>
+        <option>Blue Screen or Boot Failure</option>
+        <option>Other</option>
+      </select>
+
+      <label for="preferredTime">Preferred Time Slot</label>
+      <select name="preferredTime" id="preferredTime" required>
+        <option value="">Select</option>
+        <option>10:00 AM – 12:00 PM</option>
+        <option>12:00 PM – 2:00 PM</option>
+        <option>2:00 PM – 4:00 PM</option>
+        <option>4:00 PM – 6:00 PM</option>
+        <option>6:00 PM – 8:00 PM</option>
+      </select>
+
+      <label for="issueDetails">Briefly Describe the Issue</label>
+      <textarea name="issueDetails" id="issueDetails" rows="4" placeholder="E.g., Laptop overheating, system not booting..." required></textarea>
+
+      <button type="submit">Submit Request</button>
+      <p class="note">We'll contact you soon to confirm your booking. Thank you!</p>
+    </form>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
